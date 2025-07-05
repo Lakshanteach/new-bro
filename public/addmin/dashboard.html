@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>Admin Dashboard</title></head>
+<body style="background:#0d1a2f; color:white; padding:20px; font-family:sans-serif;">
+  <h2>Welcome Admin 👑</h2>
+  <h3>Create New Panel</h3>
+  <form onsubmit="createPanel(); return false;">
+    <input type="text" id="username" placeholder="Username" required style="padding:8px;margin:4px;">
+    <input type="password" id="password" placeholder="Password" required style="padding:8px;margin:4px;">
+    <select id="ram" style="padding:8px;margin:4px;">
+      <option>1GB</option>
+      <option>2GB</option>
+      <option>4GB</option>
+      <option>Unlimited</option>
+    </select>
+    <button type="submit" style="padding:8px;margin:4px;">Create Panel</button>
+  </form>
+  <h3>Created Panels (saved locally)</h3>
+  <ul id="panelList"></ul>
+  <script>
+    function createPanel() {
+      const u = document.getElementById('username').value;
+      const p = document.getElementById('password').value;
+      const r = document.getElementById('ram').value;
+      const item = document.createElement('li');
+      item.innerText = `👤 ${u} | 🧠 RAM: ${r} | 🔐 Pass: ${p}`;
+      document.getElementById('panelList').appendChild(item);
+      alert("Panel created (locally saved only for now)");
+    }
+  </script>
+</body>
+</html>

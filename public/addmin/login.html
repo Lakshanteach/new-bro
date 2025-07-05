@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>Admin Login</title></head>
+<body style="background:#0d1a2f; color:white; display:flex; flex-direction:column; align-items:center; justify-content:center; height:100vh;">
+  <h2>shonu x Admin Login</h2>
+  <form onsubmit="return login()" style="display:flex; flex-direction:column;">
+    <input type="text" id="user" placeholder="Username" required style="margin:5px;padding:10px;">
+    <input type="password" id="pass" placeholder="Password" required style="margin:5px;padding:10px;">
+    <button type="submit" style="margin:5px;padding:10px;">Login</button>
+  </form>
+  <script>
+    function login() {
+      const u = document.getElementById('user').value;
+      const p = document.getElementById('pass').value;
+      if (u === 'admin' && p === 'shonux123') {
+        window.location.href = "dashboard.html";
+        return false;
+      }
+      alert("Invalid login!");
+      return false;
+    }
+  </script>
+</body>
+</html>
